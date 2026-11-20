@@ -1,0 +1,497 @@
+<title>مدلت، پوشاک برند</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Concept: one scroll film. A pastel mirror-floor runway; the hero model stands still in deep indigo and turns her head to you while the collection walks past. Lime is the door (Step Inside). */
+:root{
+  --brand:#251c3b;--accent:#89e06c;--on-accent:#10200a;
+  --story-fg:#251c3b;
+  --bg:#f6f4fa;--surface:#ffffff;--fg:#1d1630;--muted:#625a78;--line:#e2dcee;--soft:#ece7f6;
+  --btn:#251c3b;--btn-fg:#ffffff;--focus:#6b4fd6;--radius:18px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#130f1d;--surface:#1c1629;--fg:#efeaf8;--muted:#a79fbd;--line:#2e2540;--soft:#251d36;--btn:#efeaf8;--btn-fg:#1d1630;--focus:#a893ff;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#130f1d;--surface:#1c1629;--fg:#efeaf8;--muted:#a79fbd;--line:#2e2540;--soft:#251d36;--btn:#efeaf8;--btn-fg:#1d1630;--focus:#a893ff;color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Vazirmatn',Tahoma,system-ui,sans-serif;font-size:16px;line-height:1.75;-webkit-text-size-adjust:100%}
+button,a{font:inherit;color:inherit}
+button{cursor:pointer}
+a{text-decoration:none}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:8px}
+.wrap{width:100%;max-width:1200px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* header */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);inset-inline:0;z-index:40;transition:background .25s,color .25s,box-shadow .25s;color:var(--story-fg)}
+.nav.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);color:var(--fg);box-shadow:0 1px 0 var(--line)}
+.nbar{display:flex;align-items:center;gap:20px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;color:inherit}
+.logo .mark{height:28px;width:auto}.logo .lt-fa{height:19px;width:auto}.logo .lt-en{height:10px;width:auto;opacity:.8}
+.links{display:flex;gap:4px;margin-inline-start:14px;flex:1}
+.links a{padding:6px 12px;border-radius:99px;font-weight:500;font-size:15px}
+.links a:hover{background:rgba(127,110,180,.16)}
+.pill{height:44px;padding:0 22px;border-radius:99px;border:0;display:inline-flex;align-items:center;gap:9px;font-weight:800;white-space:nowrap}
+.pill.lime{background:var(--accent);color:var(--on-accent)}
+.pill.dark{background:var(--btn);color:var(--btn-fg)}
+.pill.ghost{background:transparent;border:1.5px solid currentColor}
+.pill:hover{filter:brightness(1.07)}
+.burger{display:none;width:44px;height:44px;border-radius:50%;border:0;background:none;place-items:center}
+@media (max-width:860px){
+  .links{position:absolute;top:100%;inset-inline:0;flex-direction:column;margin:0;padding:10px max(16px,env(safe-area-inset-left,0px));background:var(--surface);color:var(--fg);box-shadow:0 18px 40px rgba(20,10,40,.25);display:none}
+  .links.open{display:flex}.links a{padding:14px 8px;font-size:17px}
+  .burger{display:grid}.logo .lt-en{display:none}
+  .nbar>.pill{margin-inline-start:auto;height:40px;padding:0 16px}
+}
+
+/* story */
+.story{position:relative;height:calc(100vh*5.4);height:calc(100svh*5.4)}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:linear-gradient(180deg,#e3adA6 0%,#f2c7bf 40%,#f4dbd4 58%,#b3a3bd 100%);color:var(--story-fg)}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fb{position:absolute;inset:0;width:100%;height:100%}
+.ttl{position:absolute;top:calc(92px + env(safe-area-inset-top,0px));inset-inline:0;text-align:center;pointer-events:none;z-index:2}
+.ttl h2{margin:0;font-size:clamp(30px,4.4vw,54px);font-weight:800;line-height:1.2}
+.ttl p{margin:6px 0 0;font-size:clamp(12px,1.4vw,16px);letter-spacing:.42em;font-weight:500;direction:ltr;padding-left:.42em}
+@media (max-width:760px){.ttl{top:calc(84px + env(safe-area-inset-top,0px))}}
+.hud{position:absolute;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.75;font-weight:500;direction:ltr}
+.hud.tl{top:calc(88px + env(safe-area-inset-top,0px));left:max(18px,env(safe-area-inset-left,0px))}
+.hud.bl{bottom:calc(22px + env(safe-area-inset-bottom,0px));left:max(18px,env(safe-area-inset-left,0px))}
+.prog{position:absolute;bottom:calc(26px + env(safe-area-inset-bottom,0px));inset-inline:0;margin-inline:auto;width:min(220px,40vw);height:2px;background:rgba(37,28,59,.2)}
+.prog i{display:block;height:100%;width:0;background:var(--story-fg)}
+.cap{position:absolute;inset-inline-start:max(16px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);max-width:min(440px,44vw);opacity:0;pointer-events:none;will-change:opacity,transform}
+.cap.on{pointer-events:auto}
+.cap:not(.end){padding:22px 24px;border-radius:24px;background:rgba(244,219,212,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.cap .k{display:inline-block;font-size:13px;letter-spacing:.06em;border:1px solid rgba(37,28,59,.35);border-radius:99px;padding:2px 14px;margin-bottom:14px;background:rgba(255,255,255,.25)}
+.cap h1,.cap h2{margin:0 0 12px;font-weight:800;line-height:1.25;text-wrap:balance;font-size:clamp(30px,4.6vw,58px)}
+.cap p{margin:0 0 20px;font-size:clamp(15px,1.5vw,18px);max-width:34ch}
+.cap .row{display:flex;gap:10px;flex-wrap:wrap}
+.cap .pill.ghost{color:var(--story-fg)}
+.cap.end{inset-inline:0;margin-inline:auto;max-width:560px;text-align:center;top:auto;bottom:calc(76px + env(safe-area-inset-bottom,0px));transform:none}
+.cap.end p{margin-inline:auto}.cap.end .row{justify-content:center}
+@media (max-width:760px){
+  .cap{max-width:none;inset-inline:max(16px,env(safe-area-inset-left,0px));top:auto;bottom:calc(64px + env(safe-area-inset-bottom,0px));transform:none;text-align:center;padding:16px 16px 14px;border-radius:20px;background:linear-gradient(180deg,rgba(244,219,212,0),rgba(244,219,212,.78) 36%)}
+  .cap p{margin-inline:auto}.cap .row{justify-content:center}
+  .cap.end{padding-bottom:10px}
+  .hud.tl{display:none}
+}
+html.rm .story{height:auto}
+html.rm .stage{position:relative;height:auto;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;gap:18px;padding:110px 16px 40px}
+html.rm .cap{position:relative;inset:auto;transform:none;opacity:1;max-width:560px;margin-inline:auto;pointer-events:auto;background:rgba(244,219,212,.55);padding:18px;border-radius:18px}
+html.rm .prog,html.rm .hud{display:none}
+
+/* sections */
+section.s{padding-block:clamp(64px,10vw,120px)}
+.eyebrow{font-size:13px;letter-spacing:.06em;color:var(--muted);margin:0 0 10px;font-weight:500}
+h2.t{font-size:clamp(28px,4vw,46px);line-height:1.25;margin:0 0 14px;font-weight:800;text-wrap:balance}
+.lead{color:var(--muted);max-width:56ch;margin:0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+@media (max-width:900px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;min-width:0}
+.card h3{margin:14px 0 6px;font-size:19px;font-weight:800}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card .ico{width:30px;height:30px;color:var(--fg)}
+.steps{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:s}
+@media (max-width:900px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;border-top:2px solid var(--fg);padding-top:14px}
+.steps li::before{content:'مرحله ' counter(s,persian);display:block;font-weight:800;font-size:20px;color:var(--muted);margin-bottom:4px}
+.steps b{display:block;font-weight:800}
+.steps span{color:var(--muted);font-size:15px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.chips span{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:7px 18px;font-size:15px}
+.band{background:var(--brand);color:#fff}
+.band .lead{color:#cfc4ee}
+.cta{display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.cta .row{display:flex;gap:12px;flex-wrap:wrap}
+.band .pill.ghost{color:#fff}
+.sell{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.sell .row,.sell .ab-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.sell-w{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:26px 28px}
+.sell-w h3{margin:0 0 14px;font-size:18px;color:#fff}
+.sell-w ul{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:10px}
+.sell-w li{position:relative;padding-inline-start:26px;color:#e6defa;line-height:1.8}
+.sell-w li::before{content:'✓';position:absolute;inset-inline-start:0;top:0;color:var(--accent);font-weight:800}
+.sell-end{margin:0;padding-top:16px;border-top:1px solid rgba(255,255,255,.18);color:#cfc4ee}.sell-end b{color:#fff}
+@media (max-width:900px){.sell{grid-template-columns:1fr;gap:26px}}
+footer{background:var(--surface);border-top:1px solid var(--line);padding-block:40px 28px;color:var(--muted);font-size:14px}
+.fcols{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.fcols .logo{color:var(--fg)}
+.ph{display:inline-grid;place-items:center;width:84px;height:84px;border:1.5px dashed var(--line);border-radius:12px;font-size:11px;text-align:center;line-height:1.4;margin-inline-end:8px;color:var(--muted)}
+.scrim{position:fixed;inset:0;background:rgba(14,8,28,.6);z-index:80;display:grid;place-items:center;padding:16px}
+.modal{background:var(--surface);color:var(--fg);border-radius:22px;max-width:520px;width:100%;padding:28px 26px;position:relative}
+.modal h3{margin:0 0 8px;font-size:24px;font-weight:800}
+.modal .x{position:absolute;top:12px;inset-inline-start:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center}
+.modal ul{padding-inline-start:20px;color:var(--muted)}
+.ph2{border:1.5px dashed var(--line);border-radius:12px;padding:12px 14px;color:var(--muted);font-size:14px;margin-top:14px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.hud,.cap,.prog{display:none!important}
+</style>
+
+<header class="nav" id="nav">
+  <div class="wrap nbar">
+    <button class="burger" id="burger" aria-label="منو" aria-expanded="false" aria-controls="links"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <a class="logo" href="#top" aria-label="مدلت">
+      <!--MARK--><!--LOGOTYPE_FA--><!--LOGOTYPE_EN-->
+    </a>
+    <nav class="links" id="links" aria-label="منوی اصلی">
+      <a href="#why">مزایا</a><a href="#how">چطور کار می‌کند</a><a href="#for">برای چه کسانی</a><a href="#join">همکاری</a>
+    </nav>
+    <a class="pill lime" href="https://claude.ai/artifact/EgzwHWkqAXJB6L6uB5HwUp" target="_blank" rel="noopener" data-step>فروشگاه مجازی</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="story" id="story" aria-label="معرفی مدلت">
+  <div class="stage" id="stage">
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <div class="ttl"><h2>تازه‌های مدلت</h2><p>NEW ARRIVAL</p></div>
+    <svg class="fb" id="fb" hidden aria-hidden="true" preserveAspectRatio="xMidYMax slice"></svg>
+
+    <div class="prog" aria-hidden="true"><i id="progI"></i></div>
+  </div>
+</section>
+
+<section class="s" id="why" aria-labelledby="whyT"><div class="wrap">
+  <p class="eyebrow">چرا مدلت، انتخابی متفاوت است؟</p>
+  <h2 class="t" id="whyT">کیفیت برند، انتخابی هوشمندانه</h2>
+  <p class="lead">به دنیای محصولات برندهای معتبر ایرانی با قیمت‌های ویژه خوش آمدید. مدلت فرصتی است برای انتخاب محصولات برندهای باکیفیت جایی که اصالت، کیفیت، استایل و قیمت مناسب در کنار هم قرار می‌گیرند.</p>
+  <div class="grid3">
+    <div class="card"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.5 6.6 19.5l1.2-6L3.3 9.3l6.1-.7L12 3Z"/></svg><h3>برندهای معتبر، قیمت‌های ویژه</h3><p>محصولات باکیفیت از برندهای منتخب ایرانی، با فرصت‌هایی ویژه برای خریدی هوشمندانه‌تر.</p></div>
+    <div class="card"><svg class="ico" viewBox="0 0 24 24"><rect x="3.5" y="4" width="7" height="7" rx="1.5"/><rect x="13.5" y="4" width="7" height="7" rx="1.5"/><rect x="3.5" y="14" width="7" height="6" rx="1.5"/><rect x="13.5" y="14" width="7" height="6" rx="1.5"/></svg><h3>تنوعی برای هر سلیقه</h3><p>مجموعه‌ای متنوع از پوشاک زنانه، مردانه، بچگانه و اکسسوری از برندهای منتخب.</p></div>
+    <div class="card"><svg class="ico" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg><h3>تجربه خریدی مطمئن و آسان</h3><p>از انتخاب محصول تا دریافت سفارش، همراه شما هستیم تا خریدی آسان، شفاف و مطمئن را تجربه کنید.</p></div>
+    <div class="card"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5"/><path d="M3 10h18M7 15h3"/></svg><h3>پرداخت آسان و منعطف</h3><p>انتخاب و خرید آسان با امکان استفاده از روش‌های پرداخت متنوع و اعتبار خرید.</p></div>
+    <div class="card"><svg class="ico" viewBox="0 0 24 24"><path d="M4 8h16v12H4V8Z"/><path d="M12 8v12M4 12h16M12 8c-2.5-4-6-3-5 0 .6 1.6 3 1.2 5 0Zm0 0c2.5-4 6-3 5 0-.6 1.6-3 1.2-5 0Z"/></svg><h3>بسته‌بندی با سلیقه شما</h3><p>سفارش خود را با بسته‌بندی ویژه و امکان آماده‌سازی برای هدیه، به انتخاب خود دریافت کنید.</p></div>
+    <div class="card"><svg class="ico" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg><h3>بازگشت و تعویض آسان</h3><p>در صورت عدم رضایت از محصول، امکان بازگشت یا تعویض مطابق با شرایط فروشگاه فراهم است.</p></div>
+  </div>
+</div></section>
+
+<section class="s" id="how" style="background:var(--soft)" aria-labelledby="howT"><div class="wrap">
+  <p class="eyebrow">چطور کار می‌کند</p>
+  <h2 class="t" id="howT">از انتخاب تا تحویل، همه‌چیز ساده‌تر از همیشه</h2>
+  <p class="lead">مسیر خرید در مدلت شفاف، سریع و ساده است.</p>
+  <ol class="steps">
+    <li><b>کشف و انتخاب</b><span>محصول، برند یا فروشگاه را جستجو و انتخاب کنید.</span></li>
+    <li><b>بررسی و مقایسه</b><span>قیمت، مشخصات و سایز را مقایسه کنید.</span></li>
+    <li><b>ثبت سفارش</b><span>به سبد اضافه کنید و آنلاین سفارش دهید.</span></li>
+    <li><b>ارسال سفارش</b><span>فروشنده سفارش را آماده و ارسال می‌کند.</span></li>
+    <li><b>پشتیبانی و بازگشت</b><span>پیگیری سفارش و پشتیبانی در همه مراحل؛ بازگشت و تعویض طبق ضوابط.</span></li>
+  </ol>
+</div></section>
+
+<section class="s" id="for" aria-labelledby="forT"><div class="wrap">
+  <p class="eyebrow">برای چه کسانی</p>
+  <h2 class="t" id="forT">دنیای مد، برای هر سلیقه؛ انتخابی برای هر سبک</h2>
+  <p class="lead">بازار آنلاین پوشاک ایران؛ کشف برند، مقایسه و خرید هوشمندانه.</p>
+  <div class="chips">
+    <span>برندهای معتبر</span><span>استایل و مد روز</span><span>خرید هوشمندانه</span><span>خانواده‌ها</span><span>برندهای ایرانی</span><span>محصولات خاص</span><span>فروشگاه‌ها و تولیدکنندگان</span><span>خریداران عمده</span><span>هدیه‌جویان</span>
+  </div></section>
+
+<section class="s band" id="join" aria-labelledby="joinT"><div class="wrap sell">
+  <div class="sell-m">
+    <h2 class="t" id="joinT" style="margin-bottom:12px">فروشگاهت را به دنیای بزرگ‌تری معرفی کن!</h2>
+    <p class="lead">مدلت، بستری برای رشد برندها و فروشگاه‌های پوشاک است. محصولاتت را در معرض دید مشتریان بیشتر قرار بده، بازار فروش خودت را گسترش بده و کسب‌وکارت را در مسیر رشد قرار بده.</p>
+    <div class="row">
+      <button class="pill lime" id="sellerBtn">همکاری با مدلت</button>
+      <a class="pill ghost" href="https://claude.ai/artifact/EgzwHWkqAXJB6L6uB5HwUp" target="_blank" rel="noopener" data-step>مشاهده فروشگاه‌های مدلت</a>
+    </div>
+  </div>
+  <div class="sell-w">
+    <h3>چرا در مدلت فروش داشته باشیم؟</h3>
+    <ul>
+      <li>دسترسی به جامعه گسترده‌تری از خریداران پوشاک</li>
+      <li>معرفی و نمایش محصولات در یک بازار تخصصی</li>
+      <li>فرصت توسعه فروش و افزایش دیده‌شدن برند</li>
+      <li>مدیریت متمرکز محصولات و سفارش‌ها</li>
+      <li>امکان رشد و توسعه کسب‌وکار در فضای آنلاین</li>
+    </ul>
+    <p class="sell-end"><b>برندت شایسته دیده‌شدن است.</b> از امروز، مسیر تازه‌ای برای فروش و رشد کسب‌وکارت بساز.</p>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div><a class="logo" href="#top" aria-label="مدلت"><!--MARK2--><!--LOGOTYPE_FA2--></a><p style="margin:12px 0 0;max-width:36ch">مارکت‌پلیس پوشاک ایرانی. نسخه نمونه برای بررسی طرح، امکانات و محصولات در حال راه‌اندازی‌اند.</p></div>
+    <div><span class="ph">جای نماد اعتماد</span><span class="ph">جای نماد ساماندهی</span></div>
+  </div>
+</div></footer>
+
+<div id="modalRoot"></div>
+
+<script>
+document.documentElement.setAttribute('dir','rtl');document.documentElement.setAttribute('lang','fa');
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(rm)document.documentElement.classList.add('rm');
+function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
+function sm(a,b,x){var t=clamp((x-a)/(b-a),0,1);return t*t*(3-2*t)}
+function mix(a,b,t){return a+(b-a)*t}
+
+/* ---------- nav ---------- */
+var nav=$('#nav'),story=$('#story');
+$('#burger').addEventListener('click',function(){var o=$('#links').classList.toggle('open');this.setAttribute('aria-expanded',o)});
+$$('#links a').forEach(function(a){a.addEventListener('click',function(){$('#links').classList.remove('open')})});
+function storyP(){
+  var r=story.getBoundingClientRect(),vh=window.innerHeight,span=Math.max(1,r.height-vh);
+  return clamp(-r.top/span,0,1);
+}
+function navState(){var r=story.getBoundingClientRect();nav.classList.toggle('solid',r.bottom<window.innerHeight*.7||rm&&window.scrollY>40)}
+
+/* ---------- modal ---------- */
+function closeModal(){$('#modalRoot').innerHTML='';if(lastFocus)lastFocus.focus()}
+var lastFocus=null;
+$('#sellerBtn').addEventListener('click',function(){
+  lastFocus=this;
+  $('#modalRoot').innerHTML='<div class="scrim" id="scr"><div class="modal" role="dialog" aria-modal="true" aria-label="همکاری با مدلت"><button class="x" aria-label="بستن"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button><h3>همکاری با مدلت</h3><p style="color:var(--muted);margin:0 0 10px">برای فروشندگان و برندها، مسیر کار این است:</p><ul><li>قرارداد و هماهنگی تأمین کالا با تیم مدلت</li><li>ثبت کالا و عکس‌ها در مارکت‌پلیس</li><li>مدلت سفارش، پرداخت، ارسال و پشتیبانی را مدیریت می‌کند</li><li>کمیسیون از فروش در توافق اولیه مشخص می‌شود</li></ul><div class="ph2">اطلاعات تماس مدلت (ایمیل و شماره) را بفرست تا همین‌جا بگذارم.</div></div></div>';
+  var m=$('#modalRoot');$('.x',m).addEventListener('click',closeModal);$('#scr').addEventListener('click',function(e){if(e.target.id==='scr')closeModal()});$('.x',m).focus();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&$('#modalRoot').firstChild)closeModal()});
+
+/* ---------- captions ---------- */
+var caps=$$('.cap');
+function updateCaps(p){if(!$('#progI'))return;
+  caps.forEach(function(c){
+    var a=+c.dataset.a,b=+c.dataset.b,f=+c.dataset.fade;
+    var v=sm(a-f,a+f,p)*(1-sm(b-f,b+f,p));
+    c.style.opacity=v.toFixed(3);
+    c.style.transform=(c.classList.contains('end')?'':'translateY(calc(-50% + '+((1-v)*16).toFixed(1)+'px))');
+    if(window.innerWidth<=760&&!c.classList.contains('end'))c.style.transform='translateY('+((1-v)*16).toFixed(1)+'px)';
+    if(c.classList.contains('end')&&window.innerWidth>760)c.style.transform='translateY('+((1-v)*16).toFixed(1)+'px)';
+    c.classList.toggle('on',v>.5);
+  });
+  $('#progI').style.width=(p*100).toFixed(1)+'%';
+}
+if(rm)caps.forEach(function(c){c.style.opacity='';c.style.transform=''});
+
+/* ---------- 3D runway (raw WebGL) ---------- */
+var canvas=$('#gl'),gl=null,R=null;
+function fallback(){
+  canvas.hidden=true;var s=$('#fb');s.hidden=false;
+  var cols=['#b6a6e6','#6b2f5c','#d49aab','#9fb8a2','#9cc0e6','#3a3742','#eee9f2','#f0d35c','#e88fb8','#a8d8c0'];
+  var h='<defs><linearGradient id="rf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4dbd4"/><stop offset="1" stop-color="#b3a3bd"/></linearGradient></defs><rect y="62%" width="100%" height="38%" fill="url(#rf)"/>';
+  for(var i=0;i<11;i++){var x=4+i*9.2,hero=i===5,w=hero?7.5:5,y=hero?30:(38+(i%3)*3),hh=hero?44:34,c=hero?'#34285a':cols[i%cols.length];
+    h+='<g><rect x="'+x+'%" y="'+y+'%" width="'+w+'%" height="'+hh+'%" rx="2.4%" fill="'+c+'"/><circle cx="'+(x+w/2)+'%" cy="'+(y-2.6)+'%" r="'+(hero?2:1.5)+'%" fill="#e9c1a8"/></g>';
+    h+='<g opacity=".22"><rect x="'+x+'%" y="'+(y+hh)+'%" width="'+w+'%" height="'+hh*.7+'%" rx="2.4%" fill="'+c+'"/></g>'}
+  s.setAttribute('viewBox','0 0 100 100');s.innerHTML=h;
+  caps.forEach(function(c){c.style.opacity=c.classList.contains('end')?'':c.style.opacity});
+}
+try{
+  gl=canvas.getContext('webgl',{antialias:true,alpha:false,powerPreference:'high-performance'})||canvas.getContext('experimental-webgl');
+  if(gl)R=initGL(gl);
+}catch(e){R=null}
+if(!R){fallback()}
+
+function initGL(gl){
+  function sh(t,src){var s=gl.createShader(t);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(s));return s}
+  function prog(vs,fs,attrs){var p=gl.createProgram();gl.attachShader(p,sh(gl.VERTEX_SHADER,vs));gl.attachShader(p,sh(gl.FRAGMENT_SHADER,fs));attrs.forEach(function(a,i){gl.bindAttribLocation(p,i,a)});gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(p));return p}
+  function locs(p,names){var o={};names.forEach(function(n){o[n]=gl.getUniformLocation(p,n)});return o}
+  var PF='#ifdef GL_FRAGMENT_PRECISION_HIGH\nprecision highp float;\n#else\nprecision mediump float;\n#endif\n';
+
+  var skyP=prog('attribute vec2 aP;varying vec2 vUV;void main(){vUV=aP*.5+.5;gl_Position=vec4(aP,0.,1.);}',
+   PF+'varying vec2 vUV;uniform float uH;uniform vec3 uTop,uMid,uHor,uFloor;void main(){float y=vUV.y;vec3 c;if(y>uH){float t=(y-uH)/(1.-uH);c=mix(uHor,uMid,smoothstep(0.,.5,t));c=mix(c,uTop,smoothstep(.35,1.,t));}else{float t=(uH-y)/max(uH,.001);c=mix(uHor,uFloor,smoothstep(0.,.9,t));}gl_FragColor=vec4(c,1.);}',['aP']);
+  var skyU=locs(skyP,['uH','uTop','uMid','uHor','uFloor']);
+
+  var objP=prog('attribute vec3 aPos;attribute vec3 aNor;uniform mat4 uVP;uniform mat4 uModel;uniform mat3 uNM;uniform vec3 uScale;varying vec3 vN;varying vec3 vW;void main(){vec4 w=uModel*vec4(aPos*uScale,1.);vW=w.xyz;vN=uNM*(aNor/uScale);gl_Position=uVP*w;}',
+   PF+'varying vec3 vN;varying vec3 vW;uniform vec3 uColor,uCam,uFog;uniform float uFogD,uGloss,uMir;void main(){vec3 n=normalize(vN);vec3 L=normalize(vec3(.35,.85,.55));float d=max(dot(n,L),0.);float hemi=n.y*.5+.5;vec3 amb=mix(vec3(.60,.54,.66),vec3(1.,.93,.92),hemi);vec3 col=uColor*(amb*.74+d*.46);vec3 V=normalize(uCam-vW);float rim=pow(1.-max(dot(n,V),0.),3.);col+=rim*.10;col+=uGloss*pow(max(dot(reflect(-L,n),V),0.),22.)*.35;float dist=length(uCam-vW);float f=1.-exp(-dist*uFogD);col=mix(col,uFog,clamp(f,0.,1.));gl_FragColor=vec4(col,1.);}',['aPos','aNor']);
+  var objU=locs(objP,['uVP','uModel','uNM','uScale','uColor','uCam','uFog','uFogD','uGloss','uMir']);
+
+  var floorP=prog('attribute vec3 aPos;uniform mat4 uVP;varying vec3 vW;void main(){vW=aPos;gl_Position=uVP*vec4(aPos,1.);}',
+   PF+'varying vec3 vW;uniform vec3 uCam,uFog,uFloor;uniform float uFogD;float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}float vn(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1.,0.)),f.x),mix(h(i+vec2(0.,1.)),h(i+vec2(1.,1.)),f.x),f.y);}void main(){vec3 V=vW-uCam;float dist=length(V);V/=dist;float n=vn(vec2(vW.x*.22,vW.z*1.1))*.6+vn(vec2(vW.x*.9,vW.z*3.))*.4;float gz=1.-abs(V.y);float a=mix(.78,.34,pow(gz,.55));a+=(n-.5)*.26;vec3 base=uFloor*(.9+.22*n);float f=1.-exp(-dist*uFogD);base=mix(base,uFog,clamp(f*1.05,0.,1.));gl_FragColor=vec4(base,clamp(a,.15,.9));}',['aPos']);
+  var floorU=locs(floorP,['uVP','uCam','uFog','uFloor','uFogD']);
+
+  var sprP=prog('attribute vec2 aP;uniform mat4 uVP;uniform mat4 uModel;uniform vec2 uSz;uniform float uPh,uAmp;varying vec2 vUV;varying vec3 vW;void main(){vUV=vec2(aP.x+.5,1.-aP.y);float y=aP.y;float leg=1.-smoothstep(.02,.5,y);float side=smoothstep(-.12,.12,aP.x);float Lf=max(0.,sin(uPh)),Rf=max(0.,-sin(uPh));float lift=mix(Lf,Rf,side)*leg*.03*uAmp;float hem=sin(uPh+1.6)*.025*pow(1.-y,2.)*uAmp;vec4 w=uModel*vec4((aP.x+hem)*abs(uSz.x)*sign(uSz.x),(y+lift)*uSz.y,0.,1.);vW=w.xyz;gl_Position=uVP*w;}',
+   PF+'varying vec2 vUV;varying vec3 vW;uniform sampler2D uTex;uniform vec3 uCam,uFog;uniform float uFogD;void main(){vec4 c=texture2D(uTex,vUV);if(c.a<.06)discard;vec3 col=c.rgb;float f=1.-exp(-length(uCam-vW)*uFogD);col=mix(col,uFog,clamp(f,0.,1.));gl_FragColor=vec4(col,1.);}',['aP']);
+  var sprU=locs(sprP,['uVP','uModel','uSz','uTex','uCam','uFog','uFogD','uPh','uAmp']);
+  var SQN=0,sq=(function(){var a=[],C=6,R=24;function v(i,j){return [i/C-.5,j/R]}for(var j=0;j<R;j++)for(var i=0;i<C;i++){var q=[v(i,j),v(i+1,j),v(i+1,j+1),v(i,j+1)];[0,1,2,0,2,3].forEach(function(k){a.push(q[k][0],q[k][1])})}SQN=a.length/2;var b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(a),gl.STATIC_DRAW);return b})();
+  var SPRD=/*SPRITES*/{},SPRA=/*ASPECT*/{};var SPR={},SPRN=['purple','velvet','younggray','grayman','maroon','navydrape','bigcoat','gold','greenhijab','grayhijab','navyhijab','turban'],sprReady=false;
+  (function(){var n=0,tot=0;for(var k in SPRD)tot++;
+    for(var k in SPRD)(function(k){var im=new Image();im.onload=function(){var t=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,t);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,false);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,im);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR_MIPMAP_LINEAR);var ex=gl.getExtension('EXT_texture_filter_anisotropic');if(ex)gl.texParameterf(gl.TEXTURE_2D,ex.TEXTURE_MAX_ANISOTROPY_EXT,8);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.generateMipmap(gl.TEXTURE_2D);SPR[k]={t:t,a:SPRA[k]};if(++n===tot)sprReady=true;kick&&kick()};im.src=SPRD[k]})(k)})();
+
+  /* geometry */
+  function buf(arr){var b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(arr),gl.STATIC_DRAW);return{buf:b,n:arr.length/6}}
+  function cube(){var a=[];var ax=[[1,0,0],[0,1,0],[0,0,1]];
+    for(var i=0;i<3;i++)for(var s=-1;s<=1;s+=2){var n=ax[i].map(function(v){return v*s});var u=ax[(i+1)%3],v=ax[(i+2)%3];
+      var c=function(su,sv){return [n[0]*.5+u[0]*su*.5+v[0]*sv*.5,n[1]*.5+u[1]*su*.5+v[1]*sv*.5,n[2]*.5+u[2]*su*.5+v[2]*sv*.5]};
+      var q=[c(-1,-1),c(1,-1),c(1,1),c(-1,1)];[0,1,2,0,2,3].forEach(function(k){a.push(q[k][0],q[k][1],q[k][2],n[0],n[1],n[2])})}
+    return buf(a)}
+  function sphere(){var a=[],W=14,H=10;function P(i,j){var th=i/H*Math.PI,ph=j/W*Math.PI*2;var x=Math.sin(th)*Math.cos(ph),y=Math.cos(th),z=Math.sin(th)*Math.sin(ph);return [x,y,z]}
+    for(var i=0;i<H;i++)for(var j=0;j<W;j++){var p=[P(i,j),P(i+1,j),P(i+1,j+1),P(i,j+1)];[0,1,2,0,2,3].forEach(function(k){var q=p[k];a.push(q[0]*.5,q[1]*.5,q[2]*.5,q[0],q[1],q[2])})}
+    return buf(a)}
+  var frc={};
+  function frustum(ratio){var key=ratio.toFixed(2);if(frc[key])return frc[key];var a=[],S=16,rb=.5,rt=.5*ratio,sl=(rb-rt);
+    for(var i=0;i<S;i++){var a0=i/S*Math.PI*2,a1=(i+1)/S*Math.PI*2;
+      var b0=[Math.cos(a0)*rb,-.5,Math.sin(a0)*rb],b1=[Math.cos(a1)*rb,-.5,Math.sin(a1)*rb],t0=[Math.cos(a0)*rt,.5,Math.sin(a0)*rt],t1=[Math.cos(a1)*rt,.5,Math.sin(a1)*rt];
+      var n0=[Math.cos(a0),sl,Math.sin(a0)],n1=[Math.cos(a1),sl,Math.sin(a1)];
+      [[b0,n0],[b1,n1],[t1,n1],[b0,n0],[t1,n1],[t0,n0]].forEach(function(q){a.push(q[0][0],q[0][1],q[0][2],q[1][0],q[1][1],q[1][2])});
+      [[0,.5,0],[t0[0],.5,t0[2]],[t1[0],.5,t1[2]]].forEach(function(q){a.push(q[0],q[1],q[2],0,1,0)})}
+    return frc[key]=buf(a)}
+  var CUBE=cube(),SPH=sphere();
+  var quad=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,quad);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+  var fl=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,fl);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-200,0,-200,200,0,-200,200,0,60,-200,0,-200,200,0,60,-200,0,60]),gl.STATIC_DRAW);
+
+  /* matrices */
+  var M=new Float32Array(16),pool=[],sp=0,nm=new Float32Array(9),VP=new Float32Array(16),i0;
+  for(i0=0;i0<48;i0++)pool.push(new Float32Array(16));
+  function ident(m){m.fill(0);m[0]=m[5]=m[10]=m[15]=1}
+  function push(){pool[sp++].set(M)}function pop(){M.set(pool[--sp])}
+  function tr(x,y,z){M[12]+=M[0]*x+M[4]*y+M[8]*z;M[13]+=M[1]*x+M[5]*y+M[9]*z;M[14]+=M[2]*x+M[6]*y+M[10]*z}
+  function rx(a){var c=Math.cos(a),s=Math.sin(a);for(var i=0;i<4;i++){var y=M[4+i],z=M[8+i];M[4+i]=y*c+z*s;M[8+i]=-y*s+z*c}}
+  function ry(a){var c=Math.cos(a),s=Math.sin(a);for(var i=0;i<4;i++){var x=M[i],z=M[8+i];M[i]=x*c-z*s;M[8+i]=x*s+z*c}}
+  function rz(a){var c=Math.cos(a),s=Math.sin(a);for(var i=0;i<4;i++){var x=M[i],y=M[4+i];M[i]=x*c+y*s;M[4+i]=-x*s+y*c}}
+  function persp(fov,asp,n,f){var t=1/Math.tan(fov/2),o=new Float32Array(16);o[0]=t/asp;o[5]=t;o[10]=(f+n)/(n-f);o[11]=-1;o[14]=2*f*n/(n-f);return o}
+  function look(e,c){var z=[e[0]-c[0],e[1]-c[1],e[2]-c[2]],l=Math.hypot(z[0],z[1],z[2]);z=z.map(function(v){return v/l});
+    var x=[z[2],0,-z[0]];l=Math.hypot(x[0],x[2]);x=[x[0]/l,0,x[2]/l];var y=[z[1]*x[2]-z[2]*x[1],z[2]*x[0]-z[0]*x[2],z[0]*x[1]-z[1]*x[0]];
+    var o=new Float32Array(16);o[0]=x[0];o[1]=y[0];o[2]=z[0];o[4]=x[1];o[5]=y[1];o[6]=z[1];o[8]=x[2];o[9]=y[2];o[10]=z[2];
+    o[12]=-(x[0]*e[0]+x[1]*e[1]+x[2]*e[2]);o[13]=-(y[0]*e[0]+y[1]*e[1]+y[2]*e[2]);o[14]=-(z[0]*e[0]+z[1]*e[1]+z[2]*e[2]);o[15]=1;return o}
+  function mul(a,b){var o=new Float32Array(16);for(var i=0;i<4;i++)for(var j=0;j<4;j++){var s=0;for(var k=0;k<4;k++)s+=a[k*4+j]*b[i*4+k];o[i*4+j]=s}return o}
+
+  /* palette */
+  var C={lilac:[.71,.65,.9],plum:[.42,.18,.36],rose:[.83,.6,.67],sage:[.62,.72,.63],sky:[.61,.75,.9],char:[.23,.22,.26],ivory:[.94,.92,.95],yellow:[.95,.84,.36],pink:[.91,.56,.72],mint:[.66,.85,.75],indigo:[.2,.16,.36],navy:[.16,.18,.34],black:[.07,.06,.09],hose:[.14,.12,.17],shades:[.04,.04,.06],hair:[.1,.07,.08]};
+  var SK=[[.93,.76,.65],[.78,.56,.42],[.56,.39,.29],[.4,.27,.21]];
+  var SKY_TOP=[.89,.68,.65],SKY_MID=[.95,.78,.74],HOR=[.96,.86,.83],FLOORC=[.66,.6,.7];
+
+  var OUT=[
+   {t:'coat',c:C.lilac},{t:'coat',c:C.ivory},{t:'dress',c:C.plum},{t:'dress',c:C.pink},{t:'tee',c:C.lilac,l:C.char},{t:'hood',c:C.rose,l:C.black},{t:'tee',c:C.navy,l:C.sage},{t:'coat',c:C.yellow},{t:'coat',c:C.mint},{t:'coat',c:C.char},{t:'dress',c:C.sky},{t:'dress',c:C.sage},{t:'coat',c:C.pink},{t:'hood',c:C.lilac,l:C.indigo}
+  ];
+  var HERO={t:'coat',c:C.indigo,hero:true};
+  var figs=[];
+  function build(n){
+    figs=[];var X=[-1.5,1.7,-1.9,1.5,-1.6,2,-2.1,1.6,-1.7,1.9,-1.5,1.5];
+    var order=[0,1,2,3,4,5,6,7,8,9,10,11];
+    for(var i=0;i<n;i++){var k=order[i];
+      figs.push({id:i,o:OUT[i%OUT.length],x0:i*3-18,z:-3-(i%4)*1.5,dir:1,skin:SK[i%4],bag:false,x:X[i%X.length],off:i*2.15+((i*37)%5)*.3,sp:.9+((i*29)%5)*.04,ph:i*1.9})}
+  }
+  function mat3(){nm[0]=M[0];nm[1]=M[1];nm[2]=M[2];nm[3]=M[4];nm[4]=M[5];nm[5]=M[6];nm[6]=M[8];nm[7]=M[9];nm[8]=M[10]}
+  function part(g,sx,sy,sz,col,gloss){gl.uniformMatrix4fv(objU.uModel,false,M);mat3();gl.uniformMatrix3fv(objU.uNM,false,nm);gl.uniform3f(objU.uScale,sx,sy,sz);gl.uniform3fv(objU.uColor,col);gl.uniform1f(objU.uGloss,gloss||0);
+    gl.bindBuffer(gl.ARRAY_BUFFER,g.buf);gl.vertexAttribPointer(0,3,gl.FLOAT,false,24,0);gl.vertexAttribPointer(1,3,gl.FLOAT,false,24,12);gl.drawArrays(gl.TRIANGLES,0,g.n)}
+  function arm(side,sw,o,sk,hasBag,bagC){
+    push();tr(side*.215,1.44,0);rx(sw);
+    var long=o.t==='coat'||o.t==='hood',sc=o.c;
+    push();tr(0,-.17,0);part(CUBE,.088,.34,.098,(o.t==='dress'?sk:sc),0);pop();
+    push();tr(0,-.5,0);part(CUBE,.078,.34,.088,long?sc:sk,0);pop();
+    push();tr(0,-.69,0);part(SPH,.095,.095,.095,sk,0);
+    if(hasBag){tr(0,-.1,.0);part(CUBE,.2,.15,.07,bagC,.4)}pop();
+    pop()}
+  function leg(side,sw,o,sk){
+    var trousers=o.t==='tee'||o.t==='hood',lc=trousers?o.l:C.hose,w=trousers?.17:.115;
+    push();tr(side*.095,.93,0);rx(sw);
+    push();tr(0,-.23,0);part(CUBE,w,.46,w*1.05,lc,0);pop();
+    push();tr(0,-.69,0);part(CUBE,w*.92,.46,w,lc,0);pop();
+    push();tr(0,-.9,.045);part(CUBE,.1,.06,.25,C.black,.5);pop();
+    pop()}
+  function head(yaw,sk,hairC){
+    push();tr(0,1.69,0);ry(yaw);
+    part(SPH,.19,.23,.21,sk,0);
+    push();tr(0,.03,-.03);part(SPH,.206,.236,.218,hairC,.25);pop();
+    push();tr(0,.1,-.095);part(SPH,.1,.1,.1,hairC,.25);pop();
+    push();tr(0,.012,.092);part(CUBE,.155,.032,.034,C.shades,.8);pop();
+    pop()}
+  function body(o,sk){
+    var top=o.c;
+    if(o.t==='coat'){push();tr(0,.86,0);part(frustum(.5),.62,1.28,.46,top,.2);pop();
+      push();tr(0,1.47,0);part(CUBE,.43,.1,.21,top,0);pop();
+      push();tr(0,1.585,0);part(frustum(1),.17,.14,.17,top,0);pop()}
+    else if(o.t==='dress'){push();tr(0,.9,0);part(frustum(.42),.56,1.16,.42,top,.35);pop();
+      push();tr(0,1.45,0);part(CUBE,.33,.13,.18,top,0);pop()}
+    else{ push();tr(0,1.2,0);part(CUBE,.35,.56,.2,top,0);pop();
+      push();tr(0,.95,0);part(CUBE,.36,.1,.21,o.l,0);pop();
+      if(o.t==='hood'){push();tr(0,1.52,-.09);part(SPH,.27,.17,.2,top,0);pop();push();tr(0,1.06,.105);part(CUBE,.26,.12,.03,o.l,0);pop()} }
+    push();tr(0,1.56,0);part(CUBE,.075,.1,.075,sk,0);pop()}
+  function figure(f,t,T,mir,hero,yaw){
+    var o=hero?HERO:f.o,sk=hero?SK[1]:f.skin;
+    push();
+    var x,sw=0,bob=0,face=0;
+    if(hero){x=0;tr(0,0,0)}
+    else{var L=36;x=((f.x0+f.dir*f.sp*T)%L+L*1.5)%L-L/2;tr(x,0,f.z);face=f.dir>0?Math.PI/2:-Math.PI/2;ry(face);
+      var ph=T*f.sp*3.2+f.ph;sw=Math.sin(ph);bob=Math.abs(Math.cos(ph))*.018;tr(0,bob,0)}
+    var s=hero?Math.sin(t*1.4)*.012:sw;var lsw=hero?0:sw*.55,asw=hero?s*.3:-sw*.38;
+    body(o,sk);
+    leg(1,lsw,o,sk);leg(-1,-lsw,o,sk);
+    arm(1,asw,o,sk,false,0);arm(-1,-asw,o,sk,!hero&&f.bag,C.sky);
+    head(hero?yaw:0,sk,C.hair);
+    pop()}
+
+  var camX=0,camZ=9;
+  var P_=0;
+  function sprFig(f,t,T,hero,yaw){
+    var name=hero?'blackcoat':SPRN[f.id%SPRN.length],S=SPR[name],h=hero?1.86:1.8+(f.id%3)*.03;
+    push();var ph=0,amp=0;
+    if(hero){}
+    else{var n=figs.length,u=(P_*(n+1.2)-f.id*.82)/1.75;if(u<=0||u>=1)return pop();
+      var e=u*u*(3-2*u),zF=camZ-1.9,z=-8+(zF+8)*Math.pow(u,1.15);tr(f.x*(1-.15*e),0,z);ry(-f.x*.02)}
+    gl.uniformMatrix4fv(sprU.uModel,false,M);gl.uniform2f(sprU.uSz,h*S.a,h);gl.uniform1f(sprU.uPh,ph);gl.uniform1f(sprU.uAmp,amp);
+    gl.bindTexture(gl.TEXTURE_2D,S.t);gl.drawArrays(gl.TRIANGLES,0,SQN);pop()}
+  function sprites(t,T,yaw,mir){
+    gl.useProgram(sprP);gl.uniformMatrix4fv(sprU.uVP,false,VP);gl.uniform3f(sprU.uCam,camX,mirCamY,camZ);gl.uniform3fv(sprU.uFog,HOR);gl.uniform1f(sprU.uFogD,.012);gl.uniform1i(sprU.uTex,0);
+    gl.disableVertexAttribArray(1);gl.bindBuffer(gl.ARRAY_BUFFER,sq);gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0);
+    if(mir){ident(M);M[5]=-1;sp=0;for(var i=0;i<figs.length;i++)sprFig(figs[i],t,T,false,yaw);sprFig(null,t,T,true,yaw)}
+    else{ident(M);sp=0;for(var j=0;j<figs.length;j++)sprFig(figs[j],t,T,false,yaw);sprFig(null,t,T,true,yaw)}}
+  var mirCamY=1.3;
+
+  var W=1,H=1,dpr=1;
+  function resize(){var r=canvas.parentNode.getBoundingClientRect(),m=window.innerWidth<760?2:2;dpr=Math.min(window.devicePixelRatio||1,m);W=Math.max(2,Math.round(r.width*dpr));H=Math.max(2,Math.round(r.height*dpr));if(canvas.width!==W||canvas.height!==H){canvas.width=W;canvas.height=H}gl.viewport(0,0,W,H);build(window.innerWidth<760?8:12)}
+  resize();
+
+  function draw(t,p){
+    var asp=W/H,port=asp<.9;
+    var e1=sm(0,.45,p),e2=sm(.45,1,p);
+    var dist=mix(mix(3.1,4.5,e1),4.1,e2)*(port?1.2:1);
+    var fov=mix(mix(40,50,e1),46,e2)*Math.PI/180;
+    var cy=mix(mix(1.15,1.35,e1),1.25,e2),ty=1.32+e2*.06;
+    var cx=0;
+    var eye=[cx,cy,dist],tgt=[0,ty,0];camX=cx;camZ=dist;mirCamY=cy;
+    var V=look(eye,tgt),Pm=persp(fov,asp,.1,500);VP.set(mul(Pm,V));
+    var fw=[tgt[0]-eye[0],0,tgt[2]-eye[2]],fl2=Math.hypot(fw[0],fw[2]);fw=[fw[0]/fl2,0,fw[2]/fl2];
+
+    var hy=(VP[1]*fw[0]+VP[9]*fw[2])/(VP[3]*fw[0]+VP[11]*fw[2]);
+    var uH=clamp(hy*.5+.5,.05,.95);
+    P_=p;var T=t*.55+p*20,yaw=-1.38*(1-sm(.3,.62,p))+Math.sin(t*.6)*.025;
+    gl.disable(gl.BLEND);gl.disable(gl.DEPTH_TEST);gl.clearColor(HOR[0],HOR[1],HOR[2],1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+    gl.useProgram(skyP);gl.uniform1f(skyU.uH,uH);gl.uniform3fv(skyU.uTop,SKY_TOP);gl.uniform3fv(skyU.uMid,SKY_MID);gl.uniform3fv(skyU.uHor,HOR);gl.uniform3fv(skyU.uFloor,FLOORC);
+    gl.enableVertexAttribArray(0);gl.disableVertexAttribArray(1);gl.bindBuffer(gl.ARRAY_BUFFER,quad);gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+    gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);
+    gl.useProgram(objP);gl.uniformMatrix4fv(objU.uVP,false,VP);gl.uniform3f(objU.uCam,eye[0],eye[1],eye[2]);gl.uniform3fv(objU.uFog,HOR);gl.uniform1f(objU.uFogD,.03);
+    gl.enableVertexAttribArray(1);
+    /* mirrored pass */
+    gl.uniform1f(objU.uMir,1);
+    if(sprReady){sprites(t,T,yaw,true);gl.useProgram(objP)}else{ident(M);M[5]=-1;sp=0;figure(null,t,T,true,true,yaw);for(var i=0;i<figs.length;i++)figure(figs[i],t,T,true,false,0)}
+    /* floor */
+    gl.useProgram(floorP);gl.uniformMatrix4fv(floorU.uVP,false,VP);gl.uniform3f(floorU.uCam,eye[0],eye[1],eye[2]);gl.uniform3fv(floorU.uFog,HOR);gl.uniform3fv(floorU.uFloor,FLOORC);gl.uniform1f(floorU.uFogD,.03);
+    gl.disableVertexAttribArray(1);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);
+    gl.bindBuffer(gl.ARRAY_BUFFER,fl);gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);gl.drawArrays(gl.TRIANGLES,0,6);
+    gl.depthMask(true);gl.disable(gl.BLEND);gl.clear(gl.DEPTH_BUFFER_BIT);
+    /* real pass */
+    if(sprReady){sprites(t,T,yaw,false)}else{gl.useProgram(objP);gl.enableVertexAttribArray(1);gl.uniform1f(objU.uMir,0);
+    ident(M);sp=0;for(var j=0;j<figs.length;j++)figure(figs[j],t,T,false,false,0);figure(null,t,T,false,true,yaw)}
+  }
+  return{draw:draw,resize:resize};
+}
+
+/* ---------- loop ---------- */
+var pT=0,pS=0,vis=true,raf=0,t0=performance.now();
+function frame(now){
+  raf=0;pT=storyP();pS+=(pT-pS)*.14;if(Math.abs(pT-pS)<.0004)pS=pT;
+  updateCaps(pS);navState();
+  if(R)R.draw((now-t0)/1000,pS);
+  if(vis&&!rm)raf=requestAnimationFrame(frame);
+}
+function kick(){if(!raf)raf=requestAnimationFrame(frame)}
+if(R){
+  new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)kick()},{threshold:0}).observe(story);
+  window.addEventListener('resize',function(){R.resize();kick()});
+  canvas.addEventListener('webglcontextlost',function(e){e.preventDefault();fallback()});
+}
+window.addEventListener('scroll',function(){navState();kick()},{passive:true});
+if(rm&&R){pS=.58;updateCaps(.58);R.draw(2,.58);navState()}
+else{kick()}
+navState();
+})();
+</script>
