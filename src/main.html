@@ -1836,6 +1836,8 @@ function buildStore(canvas){
       g.add(h);
       if(pool){var pl=new T.Mesh(new T.PlaneGeometry(.62,.46),poolM);pl.rotation.x=-Math.PI/2;pl.position.set(u,pool[0],pool[1]);g.add(pl)}}
   }
+  var ACCP=PRODUCTS.filter(function(p){return p.type==='acc'&&ITEMS[p.acc]});
+  function priceTag(p,w){var m=new T.Mesh(new T.PlaneGeometry(w,w/2),new T.MeshBasicMaterial({map:tagTex(p),transparent:true,depthWrite:false}));return m}
   function accShelf(a,b,front,yRail,tilt){
     var dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz),cx=(a[0]+b[0])/2,cz=(a[1]+b[1])/2,low=yRail<1.7,ys=yRail+(low?.4:.58);
     var g=new T.Group();g.position.set(cx,ys,cz);g.rotation.y=front;scene.add(g);
@@ -1847,8 +1849,10 @@ function buildStore(canvas){
     var n=Math.max(2,Math.round(len/3.2));for(var i=0;i<=n;i++){var u=-len/2+len*i/n,cb=new T.Mesh(new T.CylinderGeometry(.005,.005,3.6-ys,5),cm(0xb4b0c8,.4,.6));cb.position.set(u,(3.6-ys)/2,-.12);g.add(cb)}
     var step=.56,cnt=Math.floor((len-.2)/step);
     for(var k=0;k<cnt;k++){
-      var u=-len/2+.2+(k+.5)*(len-.2)/cnt,key=KEYS[(k*5+Math.round(len))%KEYS.length],it=ITEMS[key](pcol(k,2),pcol(k,5));
-      it.position.set(u,.0225,(key==='glass'?0:.02));it.rotation.y=(((k*37)%11)-5)*.018;if(key==='glass'||key==='hat'||key==='cap')it.rotation.y*=1.5;tg.add(it)}
+      var u=-len/2+.2+(k+.5)*(len-.2)/cnt,wk=KEYS[(k*5+Math.round(len))%KEYS.length],cand=ACCP.filter(function(p){return p.acc===wk}),pp=cand.length?cand[(k+Math.round(len))%cand.length]:ACCP[k%ACCP.length],key=pp.acc,it=ITEMS[key](parseInt(pp.color.slice(1),16),pcol(k,5));
+      it.position.set(u,.0225,(key==='glass'?0:.02));it.rotation.y=(((k*37)%11)-5)*.018;if(key==='glass'||key==='hat'||key==='cap')it.rotation.y*=1.5;tg.add(it);
+      it.traverse(function(m){if(m.isMesh){m.userData.pid=pp.id;m.userData.grp=it;clickable.push(m);(mats[pp.id]=mats[pp.id]||[]).push(m.material)}});
+      var tgm=priceTag(pp,.19);tgm.position.set(u,.075,.188);tgm.rotation.x=-.12;tg.add(tgm);tgm.userData.pid=pp.id;tgm.userData.grp=it;clickable.push(tgm)}
     halogens(g,len,low?.5:.62,low?.46:.6,-.12,[.03,.02]);
     if(Math.abs(dx)>Math.abs(dz))floorShadow(cx,cz,len+.4,.9,0);else floorShadow(cx,cz,len+.4,.9,Math.PI/2);
     return g}
@@ -1856,9 +1860,8 @@ function buildStore(canvas){
   accShelf([5.0,-7.6],[5.0,7.6],-Math.PI/2,1.95);
   accShelf([-5.0,-8.3],[5.0,-8.3],0,1.55);
   /* ---- the accessories wall: the whole door wall is shelving up to half height, everything on it is for sale ---- */
-  var ACCP=PRODUCTS.filter(function(p){return p.type==='acc'});
   (function(){
-    var W=13.6,cols=15,rows=4,rowH=.45,tk=.03,D=.42,H=rows*rowH+tk;
+    var W=13.6*11/15,cols=11,rows=4,rowH=.45,tk=.03,D=.42,H=rows*rowH+tk;
     var g=new T.Group();g.position.set(0,0,9-.012-D/2);g.rotation.y=Math.PI;scene.add(g);
     var white=cm(0xf4f2fa,.28,.05),ledM=new T.MeshBasicMaterial({color:0x89e06c});
     bx(g,W,H,.012,0,H/2,-D/2+.006,cm(0x372b64,.55,.12));
@@ -1867,12 +1870,13 @@ function buildStore(canvas){
     for(var r=0;r<rows;r++)for(var c=0;c<cols;c++){
       var p=ACCP[(r*5+c*3+(r%2?7:0))%ACCP.length],cxx=-W/2+(c+.5)*(W/cols),it=ITEMS[p.acc](parseInt(p.color.slice(1),16),pcol(c+r,5));
       it.position.set(cxx,tk+r*rowH+.003,-.03);it.rotation.y=(((c*13+r*7)%9)-4)*.02;g.add(it);
+      var wt=priceTag(p,.2);wt.position.set(cxx,tk+r*rowH+.06,D/2-.035);wt.userData.pid=p.id;wt.userData.grp=it;clickable.push(wt);g.add(wt);
       it.traverse(function(m){if(m.isMesh){m.userData.pid=p.id;m.userData.grp=it;clickable.push(m);(mats[p.id]=mats[p.id]||[]).push(m.material)}})}
     halogens(g,W,H+.5,.5,-D/2+.2,null);
     var cv=document.createElement('canvas');cv.width=1600;cv.height=260;var x=cv.getContext('2d');x.fillStyle='#251c3b';x.textAlign='center';x.textBaseline='middle';x.font='800 120px Vazirmatn, Tahoma, sans-serif';x.fillText('اکسسوری مدلت',800,100);x.font='600 40px Inter, sans-serif';if('letterSpacing' in x)x.letterSpacing='18px';x.fillText('ACCESSORIES',800,200);x.fillStyle='#89e06c';x.fillRect(560,236,480,10);
     var tx=new T.CanvasTexture(cv);tx.encoding=T.sRGBEncoding;tx.anisotropy=8;
     var sg=new T.Mesh(new T.PlaneGeometry(5.6,.91),new T.MeshBasicMaterial({map:tx,transparent:true}));sg.position.set(0,2.85,8.985);sg.rotation.y=Math.PI;scene.add(sg);
-    floorShadow(0,8.55,13.8,.9,0)})();
+    floorShadow(0,8.55,W+.2,.9,0)})();
   /* showpiece */
   var cable=new T.Mesh(new T.CylinderGeometry(.006,.006,1.4,6),stdMat(0xcfc6e6,.3,.6));cable.position.set(0,2.9,-1);scene.add(cable);
   var show=place(byId(5),0,2.15,-1,0,1.6);
