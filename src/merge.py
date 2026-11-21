@@ -111,15 +111,18 @@ about_main='<main id="about" hidden>\n<div class="wrap" style="padding-top:18px"
 sale_html=open(B+'sale.html',encoding='utf-8').read()
 ab=ab_home
 # insert into index
-out=idx.replace('</style>',sc+pill+abcss+'</style>',1)
+out=idx.replace('</style>',sc+pill+abcss+open(B+'banner.css',encoding='utf-8').read()+'</style>',1)
 assert '<!--LOOK-->' in out and '<!--SALE-->' in out
-out=out.replace('<!--LOOK-->',h,1)
+_ban=open(B+'banner.html',encoding='utf-8').read()
+for _k in ('BAN1','BAN2'):
+    _ban=_ban.replace('/*%s*/'%_k,'data:image/webp;base64,'+base64.b64encode(open(B+'ban%s.webp'%_k[-1],'rb').read()).decode())
+out=out.replace('<!--LOOK-->',_ban+h,1)
 out=out.replace('<!--SALE-->',sale_html,1)
 out=out.replace('    </section>\n  </main>\n','    </section>\n\n'+ab+'  </main>\n',1)
 out=out.replace('  <main id="style" hidden>',about_main+'  <main id="style" hidden>',1)
 assert 'id="about"' in out
 assert 'id="why2"' in out
-js=js+'\n'+abjs
+js=js+'\n'+abjs+'\n'+open(B+'banner.js',encoding='utf-8').read()
 # script before the main script
 out=out.replace('<script>\n','<script>\n'+js+'\n</script>\n<script>\n',1) if False else out.replace('</script>','</script>\n<script>\n'+js+'\n</script>',1) if False else out
 i=out.rindex('</script>')

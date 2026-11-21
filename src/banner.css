@@ -1,0 +1,28 @@
+/* slider banner after the hero */
+.ban{position:relative;margin:26px auto 8px}
+.ban-vp{position:relative;border-radius:28px;overflow:hidden;min-height:clamp(420px,42vw,540px);background:#6b7072}
+.ban-s{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--bg);color:var(--fg);opacity:0;visibility:hidden;transition:opacity .7s ease,visibility 0s .7s}
+.ban-s.on{opacity:1;visibility:visible;transition:opacity .7s ease}
+.ban-tx{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:clamp(24px,4vw,64px)}
+.ban-tx small{font-size:12.5px;font-weight:700;letter-spacing:.14em;color:var(--ac)}
+.ban-tx h2{margin:0;font-size:clamp(26px,3.4vw,46px);line-height:1.35;font-weight:800;text-wrap:balance}
+.ban-tx p{margin:0;max-width:46ch;opacity:.9;line-height:1.9}
+.ban-bt{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.ban-bt .primary{background:#fff;color:#1c1830}
+.ban-s:nth-child(2) .ban-bt .primary{background:#1c1830;color:#fff}
+.ban-bt .ghost{background:transparent;border:1.5px solid currentColor;color:inherit;border-radius:99px;padding:0 22px;height:46px;font:inherit;font-weight:700;cursor:pointer}
+.ban-im{position:relative;min-height:0;display:flex;justify-content:center;align-items:flex-end;overflow:hidden}
+.ban-im img{height:100%;width:auto;max-width:100%;object-fit:contain;object-position:center bottom;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 14%,#000 86%,transparent 100%)}
+.ban-im.b2 img{width:100%;height:100%;object-fit:cover;object-position:center bottom}
+.ban-ar{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#1c1830;font-size:20px;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.ban-ar.prev{inset-inline-start:14px}.ban-ar.next{inset-inline-end:14px}
+.ban-dots{position:absolute;bottom:14px;inset-inline:0;display:flex;justify-content:center;gap:8px;z-index:3}
+.ban-dots button{width:9px;height:9px;border-radius:99px;border:0;background:rgba(255,255,255,.6);padding:0;cursor:pointer;transition:width .25s}
+.ban-dots button.on{width:28px;background:#fff}
+@media (max-width:860px){
+ .ban-vp{min-height:640px}
+ .ban-s{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+ .ban-im{order:-1;height:300px;align-items:flex-end}
+ .ban-tx{padding:20px 22px 44px;gap:10px}
+ .ban-ar{display:none}
+}

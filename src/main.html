@@ -2142,7 +2142,7 @@ $('#acctBtn').addEventListener('click',function(){AU.user?openAcct():openAuth('l
 $('#clJoin').addEventListener('click',function(){openAuth('signup')});
 $('#clLogin').addEventListener('click',function(){openAuth('login')});
 authApi.me().then(setUser);
-window.__md={PRODUCTS:PRODUCTS,byId:byId,art:art,money:money,fa:fa,addToCart:addToCart,openModal:openModal};
+window.__md={PRODUCTS:PRODUCTS,byId:byId,art:art,money:money,fa:fa,addToCart:addToCart,openModal:openModal,goCat:function(c){state.cat=c;state.q='';go('collection')}};
 window.__md.requireLogin=function(then){if(AU.user)return then();closeDrawer();openAuth('login','برای ادامهٔ خرید وارد شو یا حساب بساز.',then)};
 /* boot */
 renderHome();updateBadges();route();
