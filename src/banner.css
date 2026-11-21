@@ -1,5 +1,6 @@
 /* slider banner after the hero */
-.ban{position:relative;margin:26px auto 8px}
+.ban{position:relative;margin:14px auto 8px}
+.sec.brs{padding-bottom:4px}
 .ban-vp{position:relative;border-radius:28px;overflow:hidden;min-height:clamp(420px,42vw,540px);background:#6b7072}
 .ban-s{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--bg);color:var(--fg);opacity:0;visibility:hidden;transition:opacity .7s ease,visibility 0s .7s}
 .ban-s.on{opacity:1;visibility:visible;transition:opacity .7s ease}
