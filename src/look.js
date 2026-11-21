@@ -1,7 +1,7 @@
 (function(){
 var SP=/*SPRITES*/{},AS=/*ASPECT*/{},M=window.__md;
 var tr=document.getElementById('lkTrack');if(!tr||!M)return;
-var LOOKS=[['purple','ست بنفش نرم',[101,102]],['grayman','ست روزمره',[103,104,105]],['blackcoat','کت مشکی شهری',[106,107]],['maroon','ست پاییزی',[108]],['younggray','استایل خاکستری',[109,110,111]],['navydrape','شب سرمه‌ای',[112]]];
+var LOOKS=[['m1','کژوال جین روشن',[36,44]],['m2','مینیمال کرم',[27,70,104]],['m3','سفید تابستانی',[31,205]],['m4','ست خاکی',[204,207,74]],['m5','پولو و بوت',[202,205,111]],['m6','شب رسمی',[201,104,105]],['m7','بلیزر سرمه‌ای',[103,205,207]]];
 var N=LOOKS.length,act=0,hov=false,vis=true,timer=0,fav={};
 var stage=document.getElementById('lkStage'),row=document.getElementById('lkRow'),seg=document.getElementById('lkSeg'),ring=document.getElementById('lkRing');
 var els=LOOKS.map(function(L,i){var d=document.createElement('div');d.className='lk2-m';
